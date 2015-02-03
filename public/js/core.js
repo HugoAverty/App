@@ -65,6 +65,9 @@ var app = angular.module('app', ['ngResource'])
                     loggedin: checkLoggedin
                 }
             })
+            .when('/contact', {
+                templateUrl: 'views/contact.html'
+            })
             .when('/login', {
                 templateUrl: 'views/login.html',
                 controller: 'LoginCtrl'
@@ -73,7 +76,7 @@ var app = angular.module('app', ['ngResource'])
                 redirectTo: '/'
             });
         //================================================
-
+        $locationProvider.html5Mode(true);
     }) // end of config()
     .run(function($rootScope, $http){
         $rootScope.message = '';

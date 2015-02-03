@@ -59,7 +59,12 @@ if ('development' == app.get('env')) {
 //==================================================================
 // routes
 app.get('/', function(req, res){
-  res.render('index', { title: 'Express' });
+    res.render('index', { title: 'WebContainer - Useful web content, articles and tools' });
+});
+
+app.get('/contact', function(req, res){
+    console.log("Pass in contact");
+    res.render('contact', { title: 'WebContainer - Contact' });
 });
 
 app.get('/users', auth, function(req, res){
