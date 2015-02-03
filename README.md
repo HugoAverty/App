@@ -28,7 +28,7 @@ bower install
 > **Console:**
 ```
 cd src/
-ulp watch
+gulp watch
 ```
 (gulp whatever)
 
