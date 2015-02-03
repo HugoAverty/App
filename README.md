@@ -13,17 +13,23 @@ Which use :
 
 #### <i class="icon-file"></i> Node package manager
 > **Console:**
-```npm install --save-dev```
+```
+npm install --save-dev
+```
 
 #### <i class="icon-file"></i> Bower
 > **Console:**
-```bower install```
+```
+bower install
+```
 
 **Now READY to compile, minify and do some stuff...**
 #### <i class="icon-file"></i> Gulpfile
 > **Console:**
-> cd src/
-```gulp watch```
+```
+cd src/
+ulp watch
+```
 (gulp whatever)
 
 ----------
