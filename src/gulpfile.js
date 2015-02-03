@@ -34,7 +34,10 @@ var
     cache        = require('gulp-cache'),
     livereload   = require('gulp-livereload');
 
-var bowerPATH = '../bower_components/';
+var
+    bowerPATH   = '../bower_components/'
+    publicPATH  = '../public/'
+    srcPATH     = '';
 
 var config = {
 
@@ -45,7 +48,7 @@ var config = {
 
     // Should CSS & JS be compressed?
     minifyCss: true,
-    uglifyJS: true
+    uglifyJS: false
 
 }
 
@@ -72,8 +75,9 @@ gulp.task('js', function() {
     var scripts = [
         'js/angular.min.js',
         'js/angular-resource.min.js',
-        'js/core.js',
-        'js/script.js',
+        bowerPATH + 'angular-strap/dist/angular-strap.min.js',
+        bowerPATH + 'angular-strap/dist/angular-strap.tpl.min.js',
+        'js/core.js'
     ];
 
     if (config.appendLiveReload === true) {
@@ -113,7 +117,7 @@ gulp.task('html', function() {
 gulp.task('fonts', function() {
     return gulp
         .src([
-            bowerPATH + 'bootstrap/fonts/*'
+            bowerPATH + 'font-awesome/fonts/*'
         ])
         .pipe(gulp.dest('../public/fonts'))
         .pipe(notify({ message: 'Successfully processed font' }));

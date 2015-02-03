@@ -56,6 +56,11 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+// 404
+app.use(function(req,res){
+    res.render('404', { title: 'Woops !'});
+});
+
 //==================================================================
 // routes
 app.get('/', function(req, res){
@@ -70,6 +75,8 @@ app.get('/contact', function(req, res){
 app.get('/users', auth, function(req, res){
   res.send([{name: "user1"}, {name: "user2"}]);
 });
+
+
 //==================================================================
 
 //==================================================================
@@ -88,6 +95,7 @@ app.post('/logout', function(req, res){
   req.logOut();
   res.send(200);
 });
+
 //==================================================================
 
 http.createServer(app).listen(app.get('port'), function(){

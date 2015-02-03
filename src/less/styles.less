@@ -1,7 +1,29 @@
-@bootstrap-path: "../../bower_components/bootstrap/less/";
+@bower-path: "../../bower_components/";
+@bootstrap-path: "@{bower-path}bootstrap/less/";
+@fa-path: "@{bower-path}font-awesome/less/";
+@animate-path: "@{bower-path}animate.css/source/";
+@angular-path: "@{bower-path}angular/";
+@angular-motion-path: "@{bower-path}angular-motion/src/";
 
-// Core variables and mixins
+// Angular inline CSS import
+@import (inline) "@{angular-path}angular-csp.css";
+
+// Animate inline CSS import
+@import (inline) "@{animate-path}_base.css";
+
+// Bootstrap import
 @import "@{bootstrap-path}bootstrap.less";
 
-// Custom styles
+// Font Awesome import
+@import "@{fa-path}font-awesome.less";
+
+// Angular motion import
+@import "@{angular-motion-path}/collapse/collapse.less";
+@import "@{angular-motion-path}/fade/fade.less";
+@import "@{angular-motion-path}/fade-and-scale/fade-and-scale.less";
+@import "@{angular-motion-path}/fade-and-slide/fade-and-slide.less";
+@import "@{angular-motion-path}/flip/flip.less";
+@import "@{angular-motion-path}/slide/slide.less";
+
+// Custom variables
 @import "variables.less";

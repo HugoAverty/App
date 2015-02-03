@@ -68,6 +68,9 @@ var app = angular.module('app', ['ngResource'])
             .when('/contact', {
                 templateUrl: 'views/contact.html'
             })
+            .when('/404', {
+                templateUrl: 'views/404.html'
+            })
             .when('/login', {
                 templateUrl: 'views/login.html',
                 controller: 'LoginCtrl'
