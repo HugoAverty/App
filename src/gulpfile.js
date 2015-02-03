@@ -86,11 +86,11 @@ gulp.task('js', function() {
 
     if (config.uglifyJS === true) {
         stream.pipe(uglify());
-}
+    }
 
-return stream
-    .pipe(gulp.dest('../public/js'))
-    .pipe(notify({ message: 'Successfully compiled JavaScript' }));
+    return stream
+        .pipe(gulp.dest('../public/js'))
+        .pipe(notify({ message: 'Successfully compiled JavaScript' }));
 });
 
 // Images
@@ -101,11 +101,19 @@ gulp.task('images', function() {
         .pipe(notify({ message: 'Successfully processed image' }));
 });
 
+// Html
+gulp.task('html', function() {
+    return gulp
+        .src('views/**/*')
+        .pipe(gulp.dest('../public/views'))
+        .pipe(notify({ message: 'Successfully processed HTML views' }));
+});
+
 // Fonts
 gulp.task('fonts', function() {
     return gulp
         .src([
-            '../bower_components/bootstrap/fonts/*'
+            bowerPATH + 'bootstrap/fonts/*'
         ])
         .pipe(gulp.dest('../public/fonts'))
         .pipe(notify({ message: 'Successfully processed font' }));
@@ -119,8 +127,8 @@ gulp.task('rimraf', function() {
 });
 
 // Default task
-gulp.task('default', ['rimraf'], function() {
-    gulp.start('css', 'js', 'images', 'fonts');
+gulp.task('default', function() {
+    gulp.start('css', 'js', 'html', 'images', 'fonts');
 });
 
 // Watch
@@ -136,7 +144,7 @@ gulp.task('watch', function() {
     gulp.watch('img/**/*', ['images']);
 
     // Watch fonts
-    gulp.watch('../bower_components/bootstrap/fonts/**/*', ['fonts']);
+    gulp.watch(bowerPATH + 'bootstrap/fonts/**/*', ['fonts']);
 
     // Create LiveReload server
     var server = livereload();
