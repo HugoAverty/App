@@ -2,28 +2,29 @@
 # App
 ----------
 This is basically web template for projects based on :
-- **AngularJS**
-- **NodeJS**
-- **Bootstrap**
+1. **AngularJS**
+2. **NodeJS**
+3.**Bootstrap**
+
 Which use :
-- **Bower**
-- **Node package manager**
-- **GulpJS**
+1. **Bower**
+2. **Node package manager**
+3. **GulpJS**
 
 #### <i class="icon-file"></i> Node package manager
 > **Console:**
-> npm install --save-dev
+```npm install --save-dev```
 
 #### <i class="icon-file"></i> Bower
 > **Console:**
-> bower install
+```bower install```
 
 **Now READY to compile, minify and do some stuff...**
 #### <i class="icon-file"></i> Gulpfile
 > **Console:**
 > cd src/
-> gulp 
-(or gulp watch etc.)
+```gulp watch```
+(gulp whatever)
 
 ----------
 # Angular
