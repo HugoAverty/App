@@ -34,6 +34,8 @@ var
     cache        = require('gulp-cache'),
     livereload   = require('gulp-livereload');
 
+var bowerPATH = '../bower_components/';
+
 var config = {
 
     // If you do not have the live reload extension installed,
@@ -68,7 +70,10 @@ gulp.task('css', function() {
 // JS
 gulp.task('js', function() {
     var scripts = [
-        'js/app.js'
+        'js/angular.min.js',
+        'js/angular-resource.min.js',
+        'js/core.js',
+        'js/script.js',
     ];
 
     if (config.appendLiveReload === true) {
@@ -91,7 +96,7 @@ return stream
 // Images
 gulp.task('images', function() {
     return gulp
-        .src('src/images/**/*')
+        .src('img/**/*')
         .pipe(gulp.dest('../public/img'))
         .pipe(notify({ message: 'Successfully processed image' }));
 });
@@ -122,16 +127,16 @@ gulp.task('default', ['rimraf'], function() {
 gulp.task('watch', function() {
 
     // Watch .less files
-    gulp.watch('src/less/**/*.less', ['css']);
+    gulp.watch('less/**/*.less', ['css']);
 
     // Watch .js files
-    gulp.watch('src/js/**/*.js', ['js']);
+    gulp.watch('js/**/*.js', ['js']);
 
     // Watch image files
-    gulp.watch('src/images/**/*', ['images']);
+    gulp.watch('img/**/*', ['images']);
 
     // Watch fonts
-    gulp.watch('bower_components/bootstrap/fonts/**/*', ['fonts']);
+    gulp.watch('../bower_components/bootstrap/fonts/**/*', ['fonts']);
 
     // Create LiveReload server
     var server = livereload();

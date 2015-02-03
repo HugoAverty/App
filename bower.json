@@ -1,0 +1,20 @@
+{
+  "name": "appbase",
+  "version": "0.0.0",
+  "authors": [
+    "Hugo Averty <hugoaverty@gmail.com>"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    ".idea"
+  ],
+  "devDependencies": {
+    "angular-strap": "~2.1.6",
+    "animate.css": "~3.2.0",
+    "bootstrap": "~3.3.2",
+    "font-awesome": "~4.3.0"
+  }
+}
