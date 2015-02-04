@@ -154,7 +154,7 @@ gulp.task('watch', function() {
     var server = livereload();
 
     // Watch any files in , reload on change
-    gulp.watch(['css/style.css', 'js/script.js', 'images/**/*', 'fonts/**/*']).on('change', function(file) {
+    gulp.watch([publicPATH + 'css/style.css', publicPATH + 'js/script.js', publicPATH + 'images/**/*', publicPATH + 'fonts/**/*']).on('change', function(file) {
         server.changed(file.path);
     });
 

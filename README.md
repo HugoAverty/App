@@ -11,6 +11,8 @@ Which use :
 2. **Node package manager**
 3. **GulpJS**
 
+----------
+
 #### <i class="icon-file"></i> Node package manager
 > **Console:**
 ```
