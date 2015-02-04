@@ -56,11 +56,6 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-// 404
-app.use(function(req,res){
-    res.render('index', { title: 'Woops !'});
-});
-
 //==================================================================
 // routes
 app.get('/', function(req, res){

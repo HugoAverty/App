@@ -11,8 +11,78 @@
 // Animate inline CSS import
 @import (inline) "@{animate-path}_base.css";
 
-// Bootstrap import
-@import "@{bootstrap-path}bootstrap.less";
+
+
+// ----START Bootstrap import
+// Core variables and mixins
+@import "@{bootstrap-path}mixins.less";
+
+// Reset and dependencies
+@import "@{bootstrap-path}normalize.less";
+@import "@{bootstrap-path}print.less";
+/*@import "glyphicons.less";*/
+
+// Core CSS
+/*
+@import "scaffolding.less";
+@import "type.less";
+*/
+@import "@{bootstrap-path}code.less";
+
+@import "@{bootstrap-path}grid.less";
+/*
+@import "tables.less";
+*/
+@import "@{bootstrap-path}forms.less";
+/*
+@import "buttons.less";
+*/
+
+// Components
+
+@import "@{bootstrap-path}component-animations.less";
+/*
+@import "dropdowns.less";
+@import "button-groups.less";
+@import "input-groups.less";
+*/
+@import "@{bootstrap-path}navs.less";
+@import "@{bootstrap-path}navbar.less";
+@import "@{bootstrap-path}breadcrumbs.less";
+@import "@{bootstrap-path}pagination.less";
+@import "@{bootstrap-path}pager.less";
+/*
+@import "labels.less";
+@import "badges.less";
+@import "jumbotron.less";
+@import "thumbnails.less";
+*/
+@import "@{bootstrap-path}alerts.less";
+/*
+@import "progress-bars.less";
+@import "media.less";
+@import "list-group.less";
+@import "panels.less";
+@import "responsive-embed.less";
+@import "wells.less";
+*/
+@import "@{bootstrap-path}close.less";
+
+// Components w/ JavaScript
+@import "@{bootstrap-path}modals.less";
+/*
+@import "tooltip.less";
+@import "popovers.less";
+@import "carousel.less";
+*/
+
+// Utility classes
+@import "@{bootstrap-path}utilities.less";
+@import "@{bootstrap-path}responsive-utilities.less";
+
+// ----END Bootstrap import
+
+
 
 // Font Awesome import
 @import "@{fa-path}font-awesome.less";
@@ -27,3 +97,6 @@
 
 // Custom variables
 @import "variables.less";
+@import "reset.less";
+@import "boxes.less";
+@import "global.less";

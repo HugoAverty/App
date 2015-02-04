@@ -66,8 +66,7 @@ gulp.task('css', function() {
     }
 
     return stream
-        .pipe(gulp.dest(publicPATH + 'css'))
-        .pipe(notify({ message: 'Successfully compiled LESS' }));
+        .pipe(gulp.dest(publicPATH + 'css'));
 });
 
 // JS
@@ -93,24 +92,21 @@ gulp.task('js', function() {
     }
 
     return stream
-        .pipe(gulp.dest(publicPATH + 'js'))
-        .pipe(notify({ message: 'Successfully compiled JavaScript' }));
+        .pipe(gulp.dest(publicPATH + 'js'));
 });
 
 // Images
 gulp.task('images', function() {
     return gulp
         .src('img/**/*')
-        .pipe(gulp.dest(publicPATH + 'img'))
-        .pipe(notify({ message: 'Successfully processed image' }));
+        .pipe(gulp.dest(publicPATH + 'img'));
 });
 
 // Html
 gulp.task('html', function() {
     return gulp
         .src('views/**/*')
-        .pipe(gulp.dest(publicPATH + 'views'))
-        .pipe(notify({ message: 'Successfully processed HTML views' }));
+        .pipe(gulp.dest(publicPATH + 'views'));
 });
 
 // Fonts
@@ -119,8 +115,7 @@ gulp.task('fonts', function() {
         .src([
             bowerPATH + 'font-awesome/fonts/*'
         ])
-        .pipe(gulp.dest(publicPATH + 'fonts'))
-        .pipe(notify({ message: 'Successfully processed font' }));
+        .pipe(gulp.dest(publicPATH + 'fonts'));
 });
 
 // Rimraf
@@ -144,6 +139,9 @@ gulp.task('watch', function() {
     // Watch .js files
     gulp.watch('js/**/*.js', ['js']);
 
+    // Watch .html files
+    gulp.watch('views/**/*.html', ['html']);
+
     // Watch image files
     gulp.watch('img/**/*', ['images']);
 
@@ -154,7 +152,7 @@ gulp.task('watch', function() {
     var server = livereload();
 
     // Watch any files in , reload on change
-    gulp.watch([publicPATH + 'css/style.css', publicPATH + 'js/script.js', publicPATH + 'images/**/*', publicPATH + 'fonts/**/*']).on('change', function(file) {
+    gulp.watch([publicPATH + 'css/style.css', publicPATH + 'views/**/*.html', publicPATH + 'js/script.js', publicPATH + 'images/**/*', publicPATH + 'fonts/**/*']).on('change', function(file) {
         server.changed(file.path);
     });
 
