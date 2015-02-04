@@ -58,7 +58,7 @@ if ('development' == app.get('env')) {
 
 // 404
 app.use(function(req,res){
-    res.render('404', { title: 'Woops !'});
+    res.render('index', { title: 'Woops !'});
 });
 
 //==================================================================
@@ -67,9 +67,24 @@ app.get('/', function(req, res){
     res.render('index', { title: 'WebContainer - Useful web content, articles and tools' });
 });
 
+app.get('/blog', function(req, res){
+    console.log("Pass in contact");
+    res.render('index', { title: 'WebContainer - Blog' });
+});
+
+app.get('/portfolio', function(req, res){
+    console.log("Pass in contact");
+    res.render('index', { title: 'WebContainer - Portfolio' });
+});
+
+app.get('/about', function(req, res){
+    console.log("Pass in contact");
+    res.render('index', { title: 'WebContainer - About me' });
+});
+
 app.get('/contact', function(req, res){
     console.log("Pass in contact");
-    res.render('contact', { title: 'WebContainer - Contact' });
+    res.render('index', { title: 'WebContainer - Contact' });
 });
 
 app.get('/users', auth, function(req, res){
@@ -99,5 +114,5 @@ app.post('/logout', function(req, res){
 //==================================================================
 
 http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+  console.log('Shits append on ' + app.get('port'));
 });

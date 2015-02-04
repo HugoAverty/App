@@ -56,7 +56,19 @@ var app = angular.module('app', ['ngResource'])
         //================================================
         $routeProvider
             .when('/', {
-                templateUrl: '/views/main.html'
+                templateUrl: '/views/index.html'
+            })
+            .when('/blog', {
+                templateUrl: 'views/blog.html'
+            })
+            .when('/portfolio', {
+                templateUrl: 'views/portfolio.html'
+            })
+            .when('/about', {
+                templateUrl: 'views/about.html'
+            })
+            .when('/contact', {
+                templateUrl: 'views/contact.html'
             })
             .when('/admin', {
                 templateUrl: 'views/admin.html',
@@ -65,18 +77,12 @@ var app = angular.module('app', ['ngResource'])
                     loggedin: checkLoggedin
                 }
             })
-            .when('/contact', {
-                templateUrl: 'views/contact.html'
-            })
-            .when('/404', {
-                templateUrl: 'views/404.html'
-            })
             .when('/login', {
                 templateUrl: 'views/login.html',
                 controller: 'LoginCtrl'
             })
             .otherwise({
-                redirectTo: '/'
+                templateUrl: 'views/404.html'
             });
         //================================================
         $locationProvider.html5Mode(true);
