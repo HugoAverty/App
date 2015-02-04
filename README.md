@@ -1,10 +1,11 @@
 
 # App
 ----------
+
 This is basically web template for projects based on :
 1. **AngularJS**
 2. **NodeJS**
-3.**Bootstrap**
+3. **Bootstrap**
 
 Which use :
 1. **Bower**

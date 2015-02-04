@@ -55,29 +55,29 @@ var config = {
 // CSS
 gulp.task('css', function() {
     var stream = gulp
-        .src('less/styles.less')
+        .src(srcPATH + 'less/styles.less')
         .pipe(less().on('error', notify.onError(function (error) {
             return 'Error compiling LESS: ' + error.message;
         })))
-        .pipe(gulp.dest('../public/css'));
+        .pipe(gulp.dest(publicPATH + 'css'));
 
     if (config.minifyCss === true) {
         stream.pipe(minifycss());
     }
 
     return stream
-        .pipe(gulp.dest('../public/css'))
+        .pipe(gulp.dest(publicPATH + 'css'))
         .pipe(notify({ message: 'Successfully compiled LESS' }));
 });
 
 // JS
 gulp.task('js', function() {
     var scripts = [
-        'js/angular.min.js',
-        'js/angular-resource.min.js',
+        srcPATH + 'js/angular.min.js',
+        srcPATH + 'js/angular-resource.min.js',
         bowerPATH + 'angular-strap/dist/angular-strap.min.js',
         bowerPATH + 'angular-strap/dist/angular-strap.tpl.min.js',
-        'js/core.js'
+        srcPATH + 'js/core.js'
     ];
 
     if (config.appendLiveReload === true) {
@@ -93,7 +93,7 @@ gulp.task('js', function() {
     }
 
     return stream
-        .pipe(gulp.dest('../public/js'))
+        .pipe(gulp.dest(publicPATH + 'js'))
         .pipe(notify({ message: 'Successfully compiled JavaScript' }));
 });
 
@@ -101,7 +101,7 @@ gulp.task('js', function() {
 gulp.task('images', function() {
     return gulp
         .src('img/**/*')
-        .pipe(gulp.dest('../public/img'))
+        .pipe(gulp.dest(publicPATH + 'img'))
         .pipe(notify({ message: 'Successfully processed image' }));
 });
 
@@ -109,7 +109,7 @@ gulp.task('images', function() {
 gulp.task('html', function() {
     return gulp
         .src('views/**/*')
-        .pipe(gulp.dest('../public/views'))
+        .pipe(gulp.dest(publicPATH + 'views'))
         .pipe(notify({ message: 'Successfully processed HTML views' }));
 });
 
@@ -119,7 +119,7 @@ gulp.task('fonts', function() {
         .src([
             bowerPATH + 'font-awesome/fonts/*'
         ])
-        .pipe(gulp.dest('../public/fonts'))
+        .pipe(gulp.dest(publicPATH + 'fonts'))
         .pipe(notify({ message: 'Successfully processed font' }));
 });
 
