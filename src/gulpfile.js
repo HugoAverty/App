@@ -134,16 +134,16 @@ gulp.task('default', function() {
 gulp.task('watch', function() {
 
     // Watch .less files
-    gulp.watch('less/**/*.less', ['css']);
+    gulp.watch(srcPATH + 'less/**/*.less', ['css']);
 
     // Watch .js files
-    gulp.watch('js/**/*.js', ['js']);
+    gulp.watch(srcPATH + 'js/**/*.js', ['js']);
 
     // Watch .html files
-    gulp.watch('views/**/*.html', ['html']);
+    gulp.watch(srcPATH + 'views/**/*.html', ['html']);
 
     // Watch image files
-    gulp.watch('img/**/*', ['images']);
+    gulp.watch(srcPATH + 'img/**/*', ['images']);
 
     // Watch fonts
     gulp.watch(bowerPATH + 'bootstrap/fonts/**/*', ['fonts']);
