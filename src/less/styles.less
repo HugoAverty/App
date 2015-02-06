@@ -100,4 +100,71 @@
 //@import "reset.less";
 //@import "boxes.less";
 //@import "global.less";
+@import "block.less";
+@import "effects.less";
+@import "form.less";
+@import "templates.less";
+
 @import "animations.less";
+
+html {
+  background: @darkBlue;
+}
+
+.groupX{
+  position:absolute;
+  top:0;
+  left:0;
+  width:50%;
+  height:100%;
+}
+.groupX-new{
+  left:50%;
+  filter:url(../img/svg/blobbing.svg);
+}
+.rect{
+  width:100px;
+  height:100px;
+  background:black;
+  position:absolute;
+  left:50%;
+  top:50%;
+  margin-top:-50px;
+  margin-left:-50px;
+}
+
+@keyframes rect-anim-left{
+  0%{
+    transform:translateX(-10px);
+  }
+  100%{
+    transform:translateX(-60px);
+  }
+}
+.rect{
+  .animation(rect-anim-left ease-in-out 2s infinite alternate);
+}
+@keyframes rect-anim-right{
+  0%{
+    transform:translateX(10px);
+  }
+  100%{
+    transform:translateX(60px);
+  }
+}
+
+.rect+.rect{
+  height:150px;
+  margin-top:-75px;
+  .animation(rect-anim-right ease-in-out 2s infinite alternate);
+}
+.label{
+  position:absolute;
+  top:30px;
+  left:0;
+  width:50%;
+  text-align:center;
+}
+.label-new{
+  left:50%;
+}

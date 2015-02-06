@@ -109,5 +109,5 @@ app.post('/logout', function(req, res){
 //==================================================================
 
 http.createServer(app).listen(app.get('port'), function(){
-  console.log('Shits append on ' + app.get('port'));
+  console.log('Shits happens on ' + app.get('port'));
 });
