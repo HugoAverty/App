@@ -1,0 +1,26 @@
+header {
+  .container;
+  a {
+    color: @lightBlue;
+    text-decoration: none;
+  }
+  .nav {
+    width: 75%;
+    float: right;
+    a {
+      text-transform: uppercase;
+      &.nav-item {
+        color: @whiteColor;
+        font-weight: bold;
+        font-size: 12px;
+        em {
+          color: @lightBlue;
+          font-size: 12px;
+        }
+      }
+      &:hover {
+        background: none;
+      }
+    }
+  }
+}
