@@ -63,17 +63,17 @@ app.get('/', function(req, res){
 });
 
 app.get('/blog', function(req, res){
-    console.log("Pass in contact");
+    console.log("Pass in blog");
     res.render('index', { title: 'WebContainer - Blog' });
 });
 
 app.get('/portfolio', function(req, res){
-    console.log("Pass in contact");
+    console.log("Pass in portfolio");
     res.render('index', { title: 'WebContainer - Portfolio' });
 });
 
 app.get('/about', function(req, res){
-    console.log("Pass in contact");
+    console.log("Pass in about");
     res.render('index', { title: 'WebContainer - About me' });
 });
 

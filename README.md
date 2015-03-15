@@ -7,6 +7,7 @@ This is basically web template for projects based on :
 1. **AngularJS**
 2. **NodeJS**
 3. **Bootstrap**
+4. **Font-awesome**
 
 Which use :
 
